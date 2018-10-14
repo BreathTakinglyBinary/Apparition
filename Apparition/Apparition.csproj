@@ -5,11 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MySql.Data" Version="8.0.12" />
+    <Reference Include="log4net">
+      <HintPath>..\..\MiNET\bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MiNET">
+      <HintPath>..\..\MiNET\bin\MiNET.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MiNET\Test\MiNET\src\MiNET\MiNET\MiNET.csproj" />
+    <Folder Include="Provider\" />
   </ItemGroup>
 
 </Project>

@@ -1,26 +1,23 @@
-﻿using MiNET.Utils;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using MiNET.Utils;
 
 namespace Apparition {
-    public class WarpManager {
-        private Dictionary<string, PlayerLocation> warpPoints;
+	public class WarpManager {
+		private Dictionary<string, PlayerLocation> warpPoints = new Dictionary<string, PlayerLocation>();
 
-        public WarpManager() {
+		public void setWarp(string name, PlayerLocation location) {
+			warpPoints.Add(name, location);
+		}
 
-        }
-        public void setWarp(string name, PlayerLocation location) {
-            warpPoints[name] = location;
-        }
+		public PlayerLocation getWarp(string name) {
+			if (warpPoints.ContainsKey(name)) {
+				return warpPoints.GetValueOrDefault(name);
+			}
+			return null;
+		}
 
-        public PlayerLocation getWarp(string name) {
-            if (warpPoints.ContainsKey(name)) {
-                return warpPoints[name];
-            }
-            return null;
-        }
-
-        public Dictionary<string, PlayerLocation> getAllWarpPoints() {
-            return warpPoints;
-        }
-    }
+		public Dictionary<string, PlayerLocation> getAllWarpPoints() {
+			return warpPoints;
+		}
+	}
 }
